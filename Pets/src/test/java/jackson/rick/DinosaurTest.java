@@ -13,13 +13,14 @@ public class DinosaurTest {
 
     @Before
     public void setUp() throws Exception {
-        dinosaur = new Dinosaur("");
+        dinosaur = new Dinosaur("Reptar");
     }
 
     @Test
     public void speakTest() throws Exception {
         String expected = "I will eat you!";
         String actual = dinosaur.speak();
-        assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
+        assertEquals(String.format("I expected the result to be: %s", expected),
+                expected, actual);
     }
 }

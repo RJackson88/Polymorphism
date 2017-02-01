@@ -11,12 +11,10 @@ import static org.junit.Assert.*;
  */
 public class PetTest {
     private Pet pet;
-    private String name;
 
     @Before
     public void setUp() throws Exception {
-        this.name = "Big Dog";
-        this.pet = new Pet(this.name);
+        this.pet = new Pet("Catdog");
     }
 
     @Test
@@ -28,8 +26,16 @@ public class PetTest {
 
     @Test
     public void getNameTest() throws Exception {
-        String expected = "Big Dog";
+        String expected = "Catdog";
         String actual = pet.getName();
+        assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
+    }
+    
+    @Test
+    public void compareToTest() throws Exception {
+        Dog dog = new Dog("Dogcat");
+        int expected = -1;
+        int actual = pet.compareTo(dog);
         assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
     }
 }

@@ -6,20 +6,20 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by rickjackson on 1/31/17.
+ * Created by rickjackson on 2/1/17.
  */
-public class DogTest {
-    private Dog dog;
-
+public class PetComparatorTest {
+    private PetComparator pc;
+    
     @Before
     public void setUp() throws Exception {
-        dog = new Dog("Catdog");
+        this.pc = new PetComparator();
     }
-
+    
     @Test
-    public void speakTest() throws Exception {
-        String expected = "Woof!";
-        String actual = dog.speak();
+    public void compareTest() throws Exception {
+        int expected = -1;
+        int actual = pc.compare(new Dog("Catdog"), new Cat("Dogcat"));
         assertEquals(String.format("I expected the result to be: %s", expected),
                 expected, actual);
     }

@@ -18,18 +18,20 @@ public class PetFactoryTest {
         cat = new Cat("Homer");
     }
 
-//    @Test
-//    public void generatePetTest() throws Exception {
-//        Pet expected = cat;
-//        Pet actual = petFactory.generatePet("Homer", "Cat");
-//        assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
-//    }
+    @Test
+    public void generatePetTest() throws Exception {
+        Pet actual = petFactory.generatePet("Homer", "Cat");
+        boolean expected = (actual != null);
+        assertEquals(String.format("I expected the result to be: %s", expected),
+                expected, actual);
+    }
 
     @Test
     public void getTotalPets() throws Exception {
         int expected = 0;
         int actual = petFactory.getTotalPets();
-        assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
+        assertEquals(String.format("I expected the result to be: %s", expected),
+                expected, actual);
     }
 
 }

@@ -13,13 +13,14 @@ public class CatTest {
 
     @Before
     public void setUp() throws Exception {
-        cat = new Cat("");
+        cat = new Cat("Catdog");
     }
 
     @Test
     public void speakTest() throws Exception {
         String expected = "Meow!";
         String actual = cat.speak();
-        assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
+        assertEquals(String.format("I expected the result to be: %s", expected),
+                expected, actual);
     }
 }

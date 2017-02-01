@@ -20,21 +20,24 @@ public class InputTest {
     public void askHowManyPetsTest() throws Exception {
         int expected = 0;
         int actual = input.askHowManyPets();
-        assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
+        assertEquals(String.format("I expected the result to be: %s", expected),
+                expected, actual);
     }
 
     @Test
     public void askForPetNameTest() throws Exception {
         String expected = "";
         String actual = input.askForPetName();
-        assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
+        assertEquals(String.format("I expected the result to be: %s", expected),
+                expected, actual);
     }
 
     @Test
     public void askForPetTypeTest() throws Exception {
         String expected = "";
         String actual = input.askForPetType();
-        assertEquals(String.format("I expected the result to be: %s", expected), expected, actual);
+        assertEquals(String.format("I expected the result to be: %s", expected),
+                expected, actual);
     }
 
 }

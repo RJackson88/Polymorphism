@@ -1,9 +1,11 @@
 package jackson.rick;
 
+import java.util.Comparator;
+
 /**
  * Created by rickjackson on 1/31/17.
  */
-public class Pet {
+public class Pet implements Comparable<Pet> {
     String name;
 
     Pet() {}
@@ -23,4 +25,16 @@ public class Pet {
     void setName(String name) {
         this.name = name;
     }
+    
+    @Override
+    public int compareTo(Pet other) {
+        if (!this.getName().equalsIgnoreCase(other.getName())) {
+            return this.getName().compareToIgnoreCase(other.getName());
+        } else {
+            return this.getClass().getName().compareToIgnoreCase(other
+                    .getClass().getName());
+        }
+    }
+    
+    
 }

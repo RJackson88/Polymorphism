@@ -1,5 +1,7 @@
 package jackson.rick;
 
+import java.util.Collections;
+
 /**
  * Created by rickjackson on 1/31/17.
  */
@@ -27,6 +29,7 @@ public class Engine {
             String type = in.askForPetType();
             Pet pet = petFactory.generatePet(name, type);
             petWarehouse.addPet(pet);
+            Collections.sort(petWarehouse.petList);
         }
 
         for (Pet p : petWarehouse.petList) {
